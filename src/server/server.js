@@ -18,7 +18,7 @@ server.get("/", (req, res) => {
     res.send(
         htmlRemplate({
             body,
-            title: "Crypto Power",
+            title: "React app",
             initialState: JSON.stringify(initialState)
         })
     );
