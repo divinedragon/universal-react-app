@@ -4,15 +4,15 @@
     "description": "Universal React Application Template",
     "main": "index.js",
     "scripts": {
-        "client:clean": "rm static/ -fr",
-        "client:start": "webpack-dev-server --mode development --config-name webpack.config.js --open",
-        "client:build": "npm run client:clean && webpack --mode production --config-name webpack.config.js",
-        "client:watch": "webpack --watch --mode development --config-name webpack.config.js",
-        "server:start": "npm run client:watch & nodemon --exec babel-node src/server/server.js",
-        "server:build": "babel src/server --out-dir dist"
+        "clean": "rm static/ dist/ -fr",
+        "watch": "webpack --watch --mode development --config-name webpack.config.js",
+        "dev": "npm run clean && npm run watch & nodemon --exec babel-node src/server/server.js",
+        "client:build": "webpack --mode production --config-name webpack.config.js",
+        "server:build": "babel src/server --out-dir dist",
+        "build": "npm run clean && npm run client:build && npm run server:build"
     },
     "author": "Deepak Shakya <justdpk@gmail.com>",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "axios": "^0.18.0",
         "dygraphs": "^2.1.0",
